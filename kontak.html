@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak - Website Zaka Ks</title>
+    <!-- IKON TAB BROWSER (FAVICON) -->
+    <link rel="icon" type="image/png" href="zks-foto.png">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background: #1e1e1e;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+            border: 1px solid #2d2d2d;
+            animation: pageFadeIn 0.8s ease-out forwards;
+        }
+
+        @keyframes pageFadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .site-header-title {
+            color: #f3f4f6;
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-align: center;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-divider {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            margin: 15px 0;
+            border-radius: 2px;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            padding: 10px 0;
+        }
+
+        .menu a {
+            color: #60a5fa;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .menu a:hover {
+            background-color: #2563eb;
+            color: #ffffff;
+            box-shadow: 0 0 12px rgba(37, 99, 235, 0.5);
+        }
+
+        .menu a.active { background-color: #3b82f6; color: #ffffff; }
+        .menu-separator { color: #4b5563; }
+
+        .content { margin-top: 25px; line-height: 1.6; }
+
+        .content h2 {
+            color: #f3f4f6;
+            margin-bottom: 15px;
+            font-size: 24px;
+            border-left: 4px solid #3b82f6;
+            padding-left: 10px;
+        }
+
+        .content-desc { color: #9ca3af; font-size: 15px; margin-bottom: 25px; }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .form-group { display: flex; flex-direction: column; gap: 6px; }
+        .form-group label { color: #93c5fd; font-size: 14px; font-weight: 600; }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            background-color: #252525;
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 12px 15px;
+            color: #f3f4f6;
+            font-size: 14px;
+            outline: none;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
+            background-color: #2a2a2a;
+        }
+
+        .btn-submit {
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            color: #ffffff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            align-self: flex-start;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-submit:hover {
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(59, 130, 246, 0.5);
+        }
+
+        .contact-info-card {
+            background-color: #252525;
+            border: 1px solid #333;
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            border-left: 4px solid #8b5cf6;
+        }
+
+        .info-title { color: #f3f4f6; font-size: 16px; font-weight: 600; }
+        .info-email { color: #60a5fa; font-size: 15px; word-break: break-all; }
+
+        .btn-email-direct {
+            display: inline-block;
+            margin-top: 5px;
+            color: #ffffff;
+            background-color: #374151;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            width: fit-content;
+            transition: all 0.3s ease;
+        }
+
+        .btn-email-direct:hover { background-color: #4b5563; color: #93c5fd; }
+
+        /* Styling Tombol Back di Bawah */
+        .back-container {
+            margin-top: 25px;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #60a5fa;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 8px 16px;
+            background-color: #252525;
+            border: 1px solid #333;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-back:hover {
+            background-color: #3b82f6;
+            color: #ffffff;
+            transform: translateX(-3px);
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- HEADER JUDUL UTAMA -->
+        <h1 class="site-header-title">💻SELAMAT DATANG DI WEB ZAKA KS💻</h1>
+
+        <hr class="nav-divider">
+        <nav class="menu">
+            <a href="index.html">Home</a>
+            <span class="menu-separator">|</span>
+            <a href="profil.html">Profil</a>
+            <span class="menu-separator">|</span>
+            <a href="about.html">About</a>
+            <span class="menu-separator">|</span>
+            <a href="galery.html">Gallery</a>
+            <span class="menu-separator">|</span>
+            <a href="kontak.html" class="active">Kontak</a>
+        </nav>
+        <hr class="nav-divider">
+
+        <main class="content">
+            <h2>Saluran Komunikasi</h2>
+            <p class="content-desc">Silakan tinggalkan pesan atau masukan melalui formulir di bawah ini.</p>
+
+            <form class="contact-form" action="#" method="POST" onsubmit="alert('Pesan berhasil dikirim!'); return false;">
+                <div class="form-group">
+                    <label for="nama">Nama Lengkap</label>
+                    <input type="text" id="nama" placeholder="Masukkan nama kamu..." required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Alamat Email</label>
+                    <input type="email" id="email" placeholder="Masukkan email kamu..." required>
+                </div>
+
+                <div class="form-group">
+                    <label for="pesan">Pesan / Saran</label>
+                    <textarea id="pesan" rows="4" placeholder="Tuliskan pesan atau saran di sini..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Kirim Pesan</button>
+            </form>
+
+            <div class="contact-info-card">
+                <div class="info-title">📧 Kontak Email Langsung</div>
+                <p style="color: #9ca3af; font-size: 14px;">Ingin ngobrol atau kirim email secara langsung? Kamu bisa hubungi saya melalui:</p>
+                <div class="info-email"><strong>zakasyabana@gmail.com</strong></div>
+                <a href="mailto:zakasyabana@gmail.com" class="btn-email-direct">Kirim Email Langsung &rarr;</a>
+            </div>
+
+            <!-- TOMBOL BACK DI PALING BAWAH -->
+            <div class="back-container">
+                <a href="index.html" class="btn-back">&larr; Kembali ke Home</a>
+            </div>
+        </main>
+
+        <!-- FOOTER HAK CIPTA -->
+        <footer style="margin-top: 30px; text-align: center; color: #6b7280; font-size: 13px; border-top: 1px solid #2d2d2d; padding-top: 15px;">
+            &copy; 2026 Zaka Kurnia Sya'bana. All Rights Reserved.
+        </footer>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Website Zaka Ks</title>
+    <!-- IKON TAB BROWSER (FAVICON) -->
+    <link rel="icon" type="image/png" href="zks-foto.png">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background: #1e1e1e;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+            border: 1px solid #2d2d2d;
+            animation: pageFadeIn 0.8s ease-out forwards;
+        }
+
+        @keyframes pageFadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .site-header-title {
+            color: #f3f4f6;
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-align: center;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-divider {
+            border: none;
+            height: 2px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            margin: 15px 0;
+            border-radius: 2px;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            padding: 10px 0;
+        }
+
+        .menu a {
+            color: #60a5fa;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .menu a:hover {
+            background-color: #2563eb;
+            color: #ffffff;
+            box-shadow: 0 0 12px rgba(37, 99, 235, 0.5);
+        }
+
+        .menu a.active { background-color: #3b82f6; color: #ffffff; }
+        .menu-separator { color: #4b5563; }
+
+        .content { margin-top: 25px; line-height: 1.6; }
+
+        .content h2 {
+            color: #f3f4f6;
+            margin-bottom: 15px;
+            font-size: 24px;
+            border-left: 4px solid #3b82f6;
+            padding-left: 10px;
+        }
+
+        /* Kartu Informasi Utama */
+        .about-section {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .about-card {
+            background-color: #252525;
+            border-radius: 10px;
+            padding: 20px;
+            border: 1px solid #333;
+            color: #d1d5db;
+            transition: all 0.3s ease;
+        }
+
+        .about-card:hover {
+            border-color: #3b82f6;
+            transform: translateY(-2px);
+        }
+
+        .about-card-title {
+            color: #60a5fa;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .about-card p {
+            color: #9ca3af;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* Styling Tombol Back di Bawah */
+        .back-container {
+            margin-top: 25px;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #60a5fa;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 8px 16px;
+            background-color: #252525;
+            border: 1px solid #333;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-back:hover {
+            background-color: #3b82f6;
+            color: #ffffff;
+            transform: translateX(-3px);
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- HEADER JUDUL UTAMA -->
+        <h1 class="site-header-title">💻SELAMAT DATANG DI WEB ZAKA KS💻</h1>
+
+        <hr class="nav-divider">
+        <nav class="menu">
+            <a href="index.html">Home</a>
+            <span class="menu-separator">|</span>
+            <a href="profil.html">Profil</a>
+            <span class="menu-separator">|</span>
+            <a href="about.html" class="active">About</a>
+            <span class="menu-separator">|</span>
+            <a href="galery.html">Gallery</a>
+            <span class="menu-separator">|</span>
+            <a href="kontak.html">Kontak</a>
+        </nav>
+        <hr class="nav-divider">
+
+        <main class="content">
+            <h2>Tentang Website</h2>
+
+            <div class="about-section">
+                <!-- KARTU 1: TUJUAN PROYEK TUGAS -->
+                <div class="about-card">
+                    <div class="about-card-title">💻 Tujuan Pembuatan Web</div>
+                    <p>
+                        Website ini dirancang dan dibangun secara khusus untuk memenuhi tugas kuliah mata kuliah <strong>Pemrograman Web</strong>. Website ini berfungsi sebagai media portofolio digital interaktif untuk menampilkan profil diri, galeri kegiatan, serta sarana komunikasi kontak.
+                    </p>
+                </div>
+
+                <!-- KARTU 2: TEMA & DESAIN WEB -->
+                <div class="about-card">
+                    <div class="about-card-title">🌙 Konsep & Tema Desain</div>
+                    <p>
+                        Website ini menggunakan konsep tema <strong>Dark Mode (Gelap Modern)</strong> yang elegan dan nyaman di mata saat diakses dalam kurun waktu lama. Dilengkapi dengan aksen warna gradasi biru-ungu, tata letak responsif, serta efek animasi transisi halus antar halaman.
+                    </p>
+                </div>
+            </div>
+
+            <!-- TOMBOL BACK DI PALING BAWAH -->
+            <div class="back-container">
+                <a href="index.html" class="btn-back">&larr; Kembali ke Home</a>
+            </div>
+        </main>
+
+        <!-- FOOTER HAK CIPTA -->
+        <footer style="margin-top: 30px; text-align: center; color: #6b7280; font-size: 13px; border-top: 1px solid #2d2d2d; padding-top: 15px;">
+            &copy; 2026 Zaka Kurnia Sya'bana. All Rights Reserved.
+        </footer>
+    </div>
+
+</body>
+</html>
